@@ -1,0 +1,15 @@
+packages: .
+
+allow-newer:
+           --   bin:base
+           -- , canonical-json:bytestring
+           -- , cardano-binary:base
+           -- , cardano-crypto-class:base
+           -- , cardano-prelude:base
+           -- , fin:base
+           -- , int-cast:base
+           -- , protolude:base
+           -- , protolude:ghc-prim
+           -- , ral:base
+           , size-based:template-haskell
+           -- , some:base
