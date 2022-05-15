@@ -155,8 +155,9 @@
         overlays = [ haskell-nix.overlay overlay ];
       in
       {
-        # packages = (pkgs.plutus-tests.flake { }).packages;
-        packages.default = (pkgs.plutus-tests.flake { }).packages."plutus-tests:test:plutus-tests";
+        packages = (pkgs.plutus-tests.flake { }).packages // {
+          default = (pkgs.plutus-tests.flake { }).packages."plutus-tests:test:plutus-tests";
+        };
 
         # export
         inherit (pkgs) mkPackageSpec mkPackageTarball mkHackageDir mkHackageTarballFromDirs mkHackageTarball mkHackageNix mkHackageFromSpec mkHackage;
