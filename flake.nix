@@ -32,7 +32,7 @@
     plutarch.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs@{ flake-utils, nixpkgs, haskell-nix, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
+    flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
       let
         compiler-nix-name = "ghc810420210212";
         # index-state = "2022-05-04T00:00:00Z";
